@@ -10,5 +10,11 @@ package characters;
  * @author nibrax
  */
 public class PlayerCharacter extends Character {
+  
+  protected String playerName;
+  
+  public PlayerCharacter(){
+    super();
+  }
     
 }

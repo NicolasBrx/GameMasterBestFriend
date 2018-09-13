@@ -76,7 +76,7 @@ public class PatientNonPlayerCharacter extends NonPlayerCharacter {
   }
   
   @Override
-  public void loadCharacter(){
+  public void loadCharacter(String characterName){
     // TODO
   }
 }

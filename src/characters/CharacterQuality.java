@@ -16,7 +16,7 @@ public class CharacterQuality {
    * 
    */
   public CharacterQuality() {
-   this.qualityName = "";
+    this.qualityName = "";
     this.qualityDescription = "";
     this.qualityType = "";
     this.relatedSkillOrAttribute = "";
@@ -77,4 +77,12 @@ public class CharacterQuality {
   public String getRelatedSkillOrAttribute() {
     return relatedSkillOrAttribute;
   } 
+  
+  public void setScoreModifier(int scoreModifier){
+    this.scoreModifier = scoreModifier;
+  }
+  
+  public int getScoreModifier(){
+    return this.scoreModifier;
+  }
 }

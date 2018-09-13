@@ -9,6 +9,6 @@ package characters.equipment.shadowrun;
  *
  * @author nibrax
  */
-public class GearAugmentaion extends Gear {
+public class GearAugmentation extends Gear {
     
 }

@@ -46,7 +46,7 @@ public abstract class Character {
   }
   
   public abstract void saveCharacter();
-  public abstract void loadCharacter();
+  public abstract void loadCharacter(String name);
   
   
   /****************************************************************************/
@@ -155,4 +155,6 @@ public abstract class Character {
   public void setInformation(ArrayList<String> information){
     this.information = information;
   }
+  
+  // TODO: remove a piece of information
 }

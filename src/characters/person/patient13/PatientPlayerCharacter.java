@@ -3,6 +3,7 @@ package characters.person.patient13;
 import characters.CharacterAttribute;
 import characters.CharacterQuality;
 import characters.PlayerCharacter;
+import exceptions.RPG_CharacterManagementException;
 import java.util.ArrayList;
 
 /**
@@ -25,6 +26,33 @@ public class PatientPlayerCharacter extends PlayerCharacter {
     attributeList.put("seniority",new CharacterAttribute("seniority",1));
     allies = new ArrayList<>();
     enemies = new ArrayList<>();
+  }
+  
+  public int getLucidity(){
+    return attributeList.get("lucidity").getCurrentValue();
+  }
+  
+  public void setLucidity(int lucidity) throws RPG_CharacterManagementException
+  {
+    attributeList.get("lucidity").setCurrentValue(lucidity);
+  }
+  
+  public int getColdBlood(){
+    return attributeList.get("cold blood").getCurrentValue();
+  }
+  
+  public void setColdblood(int coldblood) 
+                                       throws RPG_CharacterManagementException {
+    attributeList.get("cold blood").setCurrentValue(coldblood);
+  }
+  
+  public int getVitality(){
+    return attributeList.get("vitality").getCurrentValue();
+  }
+  
+  public void setVitality(int vitality) throws RPG_CharacterManagementException
+  {
+    attributeList.get("vitality").setCurrentValue(vitality);
   }
 
   public boolean isSane(){
@@ -76,13 +104,15 @@ public class PatientPlayerCharacter extends PlayerCharacter {
     this.enemies.add(enemy);
   }
   
+  // TODO: remove an ally or an enemy
+  
   @Override
   public void saveCharacter(){
     // TODO
   }
   
   @Override
-  public void loadCharacter(){
+  public void loadCharacter(String playerName){
     // TODO
   }
 }

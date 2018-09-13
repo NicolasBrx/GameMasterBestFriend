@@ -19,7 +19,4 @@ public abstract class PlayerCharacter extends Character {
   public void setPlayerName(String playerName){
     this.playerName = playerName;
   }
-  
-  
-    
 }

@@ -26,6 +26,18 @@ public class CharacterSkill {
    * 
    * @param name
    * @param rating
+   */
+  public CharacterSkill(String name, int rating){
+    this.skillName = name;
+    this.skillRating = rating;
+    this.skillType = "";
+    this.specializations = new ArrayList<>();
+  }
+  
+  /**
+   * 
+   * @param name
+   * @param rating
    * @param type 
    */
   public CharacterSkill(String name, int rating, String type){

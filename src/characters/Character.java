@@ -1,5 +1,6 @@
 package characters;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -8,7 +9,7 @@ import java.util.HashMap;
  * provide the Civil Status of the character: sex, name, age, weight, ...
  * @author Nicolas Brax
  */
-public class Character {
+public abstract class Character {
   
   protected boolean female;
   protected String familyName;
@@ -22,6 +23,8 @@ public class Character {
   protected HashMap<String,CharacterAttribute> attributeList;
   protected HashMap<String,CharacterSkill> skillList;
   protected HashMap<String,CharacterQuality> qualityList;
+  
+  protected ArrayList<String> information;
   
   /**
    * The Constructor for the Character class.
@@ -39,7 +42,11 @@ public class Character {
     attributeList = new HashMap<>();
     skillList = new HashMap<>();
     qualityList = new HashMap<>();
+    information = new ArrayList<>();
   }
+  
+  public abstract void saveCharacter();
+  public abstract void loadCharacter();
   
   
   /****************************************************************************/
@@ -53,11 +60,11 @@ public class Character {
     this.female = female;
   }
 
-  public String getFamilyname() {
+  public String getFamilyName() {
     return familyName;
   }
 
-  public void setFamilyname(String familyname) {
+  public void setFamilyName(String familyname) {
     this.familyName = familyname;
   }
 
@@ -85,27 +92,11 @@ public class Character {
     this.age = age;
   }
 
-  public double getSize() {
-    return height;
-  }
-
-  public void setSize(double size) {
-    this.height = size;
-  }
-
-  public double getWeigth() {
-    return weight;
-  }
-
-  public void setWeigth(double weight) {
-    this.weight = weight;
-  }
-
-  public String getEyecolor() {
+  public String getEyeColor() {
     return eyeColor;
   }
 
-  public void setEyecolor(String eyecolor) {
+  public void setEyeColor(String eyecolor) {
     this.eyeColor = eyecolor;
   }
 
@@ -115,5 +106,53 @@ public class Character {
 
   public void setEthnicity(String ethnicity) {
     this.ethnicity = ethnicity;
+  }
+
+  public double getHeight(){
+    return height;
+  }
+
+  public void setHeight(double height){
+    this.height = height;
+  }
+
+  public double getWeight(){
+    return weight;
+  }
+
+  public void setWeight(double weight){
+    this.weight = weight;
+  }
+
+  public HashMap<String, CharacterAttribute> getAttributeList(){
+    return attributeList;
+  }
+
+  public void setAttributeList(HashMap<String, CharacterAttribute> attributeList){
+    this.attributeList = attributeList;
+  }
+
+  public HashMap<String, CharacterSkill> getSkillList(){
+    return skillList;
+  }
+
+  public void setSkillList(HashMap<String, CharacterSkill> skillList){
+    this.skillList = skillList;
+  }
+
+  public HashMap<String, CharacterQuality> getQualityList(){
+    return qualityList;
+  }
+
+  public void setQualityList(HashMap<String, CharacterQuality> qualityList){
+    this.qualityList = qualityList;
+  }
+
+  public ArrayList<String> getInformation(){
+    return information;
+  }
+
+  public void setInformation(ArrayList<String> information){
+    this.information = information;
   }
 }

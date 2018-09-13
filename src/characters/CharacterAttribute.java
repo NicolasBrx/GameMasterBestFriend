@@ -12,8 +12,8 @@ public class CharacterAttribute {
   private int minValue;
   private int maxValue;
   private int currentValue;
-  private int modifierValue;
   private int augmentedValue;
+  private int modifierValue;
   
   /**
    * 
@@ -22,10 +22,10 @@ public class CharacterAttribute {
   public CharacterAttribute(String attributeName){
     this.attributeName = attributeName;
     this.currentValue = 0;
-    this.minValue = 0;
-    this.maxValue = 0;
+    this.minValue = -1;
+    this.maxValue = -1;
+    this.augmentedValue = -1;
     this.modifierValue = 0;
-    this.augmentedValue = 0;
   }
   
   /**
@@ -36,10 +36,10 @@ public class CharacterAttribute {
   public CharacterAttribute(String attributeName, int currentValue){
     this.attributeName = attributeName;
     this.currentValue = currentValue;
-    this.minValue = 0;
-    this.maxValue = 0;
+    this.minValue = -1;
+    this.maxValue = -1;
+    this.augmentedValue = -1;
     this.modifierValue = 0;
-    this.augmentedValue = 0;
   }
   
   /**
@@ -55,8 +55,8 @@ public class CharacterAttribute {
     this.currentValue = currentValue;
     this.minValue = minValue;
     this.maxValue = maxValue;
+    this.augmentedValue = -1;
     this.modifierValue = 0;
-    this.augmentedValue = 0;
   }
 
   

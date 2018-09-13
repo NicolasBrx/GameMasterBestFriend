@@ -1,4 +1,4 @@
-package characters.person.patient13;
+package characters.person.tombeau;
 
 import characters.CharacterCreator;
 import characters.PlayerCharacter;
@@ -7,9 +7,9 @@ import characters.PlayerCharacter;
  *
  * @author Nicolas Brax
  */
-public class PatientCreator implements CharacterCreator {
+public class TombeauCreator implements CharacterCreator {
   
-  private PatientPlayerCharacter character;
+  private TombeauPlayerCharacter character;
   
   @Override
   public String ValidateCharacter(){
@@ -18,7 +18,7 @@ public class PatientCreator implements CharacterCreator {
   
   @Override
   public void createCharacter(){
-    character = new PatientPlayerCharacter();
+    character = new TombeauPlayerCharacter();
   }
   
   @Override
@@ -28,5 +28,5 @@ public class PatientCreator implements CharacterCreator {
   
   // plus all methods to modify the character according to both the creation 
   // rules and the game
-    
+  
 }

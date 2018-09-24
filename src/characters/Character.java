@@ -26,6 +26,8 @@ public abstract class Character {
   
   protected ArrayList<String> information;
   
+  protected boolean godMode;
+  
   /**
    * The Constructor for the Character class.
    */
@@ -43,6 +45,7 @@ public abstract class Character {
     skillList = new HashMap<>();
     qualityList = new HashMap<>();
     information = new ArrayList<>();
+    godMode = false;
   }
   
   public abstract void saveCharacter();
@@ -154,6 +157,14 @@ public abstract class Character {
 
   public void setInformation(ArrayList<String> information){
     this.information = information;
+  }
+  
+  public boolean isGodMode(){
+    return godMode;
+  }
+
+  public void setGodMode(boolean godMode){
+    this.godMode = godMode;
   }
   
   // TODO: remove a piece of information

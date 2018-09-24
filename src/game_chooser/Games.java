@@ -14,6 +14,7 @@ public enum Games {
   P13("Patient 13", 2),
   CTHULHU("Call of Cthulhu", 7),
   FS("Feng Shui", 2),
+  DA("Dragon Age", 1),
   TOMBEAU("Notre Tombeau", 1);
 
   private final String text;

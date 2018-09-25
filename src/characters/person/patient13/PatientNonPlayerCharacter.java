@@ -28,6 +28,9 @@ public class PatientNonPlayerCharacter extends NonPlayerCharacter {
 
   public void setIsSupervisor(boolean isSupervisor){
     this.isSupervisor = isSupervisor;
+    if(this.isSupervisor){
+      this.supervisor = "none";
+    }
   }
   
   public String getRoom(){

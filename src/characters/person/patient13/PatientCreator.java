@@ -11,6 +11,10 @@ public class PatientCreator implements CharacterCreator {
   
   private PatientPlayerCharacter character;
   
+  public PatientCreator(){
+    this.character = null;
+  }
+  
   @Override
   public String ValidateCharacter(){
     return null;

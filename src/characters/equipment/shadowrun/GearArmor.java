@@ -1,14 +1,30 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package characters.equipment.shadowrun;
 
 /**
  *
- * @author nibrax
+ * @author Nicolas Brax
  */
 public class GearArmor extends Gear {
-    
+  private String armorNotes;
+  
+  public GearArmor() {
+  }
+
+  public GearArmor(String armorName, int armorRating, String armorNotes, int armorPrice,
+          int armorAvailability,String legality)
+  {
+    super(armorName, armorRating, armorPrice, armorAvailability, gearClass.armor,legality);
+    this.armorNotes = armorNotes;
+  }
+
+  /****************************************************************************/
+  /*****                    Getter and Setter Methods                     *****/
+  /****************************************************************************/
+  public String getArmorNotes() {
+    return armorNotes;
+  }
+
+  public void setArmorNotes(String armorNotes) {
+    this.armorNotes = armorNotes;
+  }
 }

@@ -11,6 +11,7 @@ public class CharacterQuality {
   private final String qualityType;
   private final String relatedSkillOrAttribute;
   private int scoreModifier;
+  private int cost;
     
   /**
    * 
@@ -21,6 +22,7 @@ public class CharacterQuality {
     this.qualityType = "";
     this.relatedSkillOrAttribute = "";
     this.scoreModifier = 0;
+    this.cost = 0;
   }
   
   /**
@@ -37,6 +39,27 @@ public class CharacterQuality {
     this.qualityType = "";
     this.relatedSkillOrAttribute = relatedSkillOrAttribute;
     this.scoreModifier = scoreModifier;
+    this.cost = 0;
+    
+  }
+  
+  /**
+   * 
+   * @param qualityName
+   * @param relatedSkillOrAttribute 
+   * @param scoreModifier 
+   * @param cost 
+   */
+  public CharacterQuality(String qualityName, String relatedSkillOrAttribute,
+                          int scoreModifier, int cost
+  ){
+    this.qualityName = qualityName;
+    this.qualityDescription = "";
+    this.qualityType = "";
+    this.relatedSkillOrAttribute = relatedSkillOrAttribute;
+    this.scoreModifier = scoreModifier;
+    this.cost = cost;
+    
   }
 
   /**
@@ -85,4 +108,13 @@ public class CharacterQuality {
   public int getScoreModifier(){
     return this.scoreModifier;
   }
+
+  public int getCost(){
+    return cost;
+  }
+
+  public void setCost(int cost){
+    this.cost = cost;
+  }
+  
 }

@@ -1,5 +1,6 @@
 package characters.person.shadowrun;
 
+import exceptions.RPG_GameChooserException;
 import java.util.ArrayList;
 
 /**
@@ -51,8 +52,22 @@ public enum ShadowrunRaces {
     }//end switch
   }
   
-  public String getRace(){
+  public String getText(){
     return this.text;  
+  }
+  
+  public ShadowrunRaces getRace(String text) throws RPG_GameChooserException{
+    ShadowrunRaces toReturn = null;
+    for(ShadowrunRaces game : ShadowrunRaces.values()){
+      if(game.text.equalsIgnoreCase(text)){
+        toReturn = game;
+      }
+    }
+    if(toReturn == null){
+      throw new RPG_GameChooserException("The game " + text 
+                                         +  " is not a valid game.");
+    }
+    return toReturn;
   }
   
   public int getLifeCostAdjustment(){

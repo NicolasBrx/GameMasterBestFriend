@@ -156,12 +156,12 @@ public class TombeauPlayerCharacter extends PlayerCharacter {
   }
   
   @Override
-  public void saveCharacter(){
+  public void loadCharacter(String playerName){
     // TODO
   }
   
   @Override
-  public void loadCharacter(String playerName){
+  public void saveCharacter(){
     // TODO
   }
   

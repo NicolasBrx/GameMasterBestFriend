@@ -12,6 +12,7 @@ public class TombeauNonPlayerCharacter extends NonPlayerCharacter {
   
   private int maxLifePoints;
   private int currentLifePoints;
+  private int adrenaline;
   
   public TombeauNonPlayerCharacter(){
     super();
@@ -20,6 +21,9 @@ public class TombeauNonPlayerCharacter extends NonPlayerCharacter {
     attributeList.put("encaisser", new CharacterAttribute("encaisser",1,1,6));
     attributeList.put("reagir", new CharacterAttribute("reagir",1,1,6));
     attributeList.put("remarquer", new CharacterAttribute("remarquer",1,1,6));
+    this.adrenaline = 4;
+    this.currentLifePoints = 1;
+    this.maxLifePoints = 6;
   }
   
   public int getMove(){
@@ -76,6 +80,14 @@ public class TombeauNonPlayerCharacter extends NonPlayerCharacter {
 
   public void setMaxLifePoints(int maxLifePoints){
     this.maxLifePoints = maxLifePoints;
+  }
+
+  public int getAdrenaline(){
+    return adrenaline;
+  }
+
+  public void setAdrenaline(int adrenaline){
+    this.adrenaline = adrenaline;
   }
   
   @Override

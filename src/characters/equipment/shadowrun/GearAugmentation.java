@@ -53,5 +53,9 @@ public class GearAugmentation extends Gear{
   public void setAugmentationNotes(String augmentationNotes) {
     this.augmentationNotes = augmentationNotes;
   }
+  
+  public void loadGearListing(){
+    
+  }
 }
 

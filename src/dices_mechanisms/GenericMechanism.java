@@ -8,7 +8,7 @@ import java.util.Random;
  * the number of dice to launch as well as the number of faces.
  * @author Nicolas Brax
  */ 
-class GenericMechanism implements GameMechanism {
+public class GenericMechanism implements GameMechanism {
   
   /**
    * This method is an indicator to the fact that the mechanism is static or 

@@ -99,5 +99,8 @@ public class GearVehicle extends Gear {
   public void setVehicleNotes(String vehicleNotes) {
     this.vehicleNotes = vehicleNotes;
   }
+  public void loadGearListing(){
+    
+  }
     
 }

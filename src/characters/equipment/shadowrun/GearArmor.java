@@ -27,4 +27,8 @@ public class GearArmor extends Gear {
   public void setArmorNotes(String armorNotes) {
     this.armorNotes = armorNotes;
   }
+  
+  public void loadGearListing(){
+    
+  }
 }

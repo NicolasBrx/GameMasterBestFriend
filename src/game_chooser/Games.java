@@ -8,13 +8,15 @@ import exceptions.RPG_GameChooserException;
  * @author Nicolas BRAX
  */
 public enum Games {
-
+  
+  NONE("No game choosen",0.0),
+  GENERIC("Generic",0.0),
   ADD("Advanced Dungeons and Dragons", 3.5),
   SR("Shadowrun", 5),
   P13("Patient 13", 2),
   CTHULHU("Call of Cthulhu", 7),
   FS("Feng Shui", 2),
-  DA("Dragon Age", 1),
+  ORESTE("Oreste", 1),
   TOMBEAU("Notre Tombeau", 1);
 
   private final String text;

@@ -29,9 +29,9 @@ public class ShadowrunPlayerCharacter extends PlayerCharacter {
   
   // computed and derived attributes
   private HashMap<String,Integer> initiatives; // initiative, astral initiative, matrix initiative, initiative passes
-  private HashMap<String,Integer> limits; //mental limot, physical limit and social limit
-  private HashMap<String,Integer> conditions; // physical damages track, stun damage track, condition overflow
-  private HashMap<String,Integer> otherSkills;
+  private HashMap<String,Integer> limits;      // mental, physical and social
+  private HashMap<String,Integer> conditions;  // physical, stun, overflow
+  private HashMap<String,Integer> otherSkills; // composure, lift, memory, judge intention, movement 
   
   private int karma, initialKarma;
   private int startingNuyens;
@@ -270,6 +270,11 @@ public class ShadowrunPlayerCharacter extends PlayerCharacter {
     return toReturn;
   }
   
+  /**
+   * 
+   * @param karmaModifier
+   * @return 
+   */
   private boolean checkKarma(int karmaModifier){
     boolean toReturn = true;
     if(karmaModifier < 0){

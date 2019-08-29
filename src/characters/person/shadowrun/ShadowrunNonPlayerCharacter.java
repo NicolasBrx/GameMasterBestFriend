@@ -12,5 +12,13 @@ import characters.NonPlayerCharacter;
  * @author nibrax
  */
 public class ShadowrunNonPlayerCharacter extends NonPlayerCharacter {
-    
+  @Override
+  public void saveCharacter(){
+    // TODO
+  }
+  
+  @Override
+  public void loadCharacter(String playerName){
+    // TODO
+  }
 }

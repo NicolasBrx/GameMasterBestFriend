@@ -13,4 +13,14 @@ import characters.PlayerCharacter;
  */
 public class AddPlayerCharacter extends PlayerCharacter {
     
+  
+  @Override
+  public void saveCharacter(){
+    // TODO
+  }
+  
+  @Override
+  public void loadCharacter(String playerName){
+    // TODO
+  }
 }

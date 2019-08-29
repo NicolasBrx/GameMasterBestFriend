@@ -1,0 +1,37 @@
+<games>
+  <game>
+    <name>Advanced Donjon and Dragons</name>
+    <short>ADD</short>
+    <description>Classic Fantasy Role-Playing Game.</description>
+  </game>
+  <game>
+    <name>Shadowrun</name>
+    <short>SR</short>
+    <description>Cyberpunk Role-Playing Game with a bit of Fantasy.</description>
+  </game>
+  <game>
+    <name>Patient 13</name>
+    <short>P13</short>
+    <description>Survival Paranormal Behind Closed Doors Role-Plyaing Game. Set players as patients in an asylum where everything is far from normal.</description>
+  </game>
+  <game>
+    <name>L'Appel de Cthulhu</name>
+    <short>AC</short>
+    <description>Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn.</description>
+  </game>
+  <game>
+    <name>Feng Shui</name>
+    <short>FS</short>
+    <description>Action Role-Playing Game in the pure style of Hong Kong action movies.</description>
+  </game>
+  <game>
+    <name>Generic</name>
+    <short>Generic</short>
+    <description>Can launch every combination under the form of XDY.</description>
+  </game>
+  <game>
+    <name>Oreste</name>
+    <short>ORESTE</short>
+    <description>Space Opera in tabletop rpg!</description>
+  </game>
+</games>

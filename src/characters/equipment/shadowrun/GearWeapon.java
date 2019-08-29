@@ -97,7 +97,9 @@ public class GearWeapon extends Gear{
     this.weaponReach = weaponReach;
   }
   
-  
+  public void loadGearListing(){
+    
+  }
   
 }
 

@@ -13,4 +13,14 @@ import characters.NonPlayerCharacter;
  */
 public class FengShuiNonPlayerCharacter extends NonPlayerCharacter {
     
+  
+  @Override
+  public void saveCharacter(){
+    // TODO
+  }
+  
+  @Override
+  public void loadCharacter(String playerName){
+    // TODO
+  }
 }

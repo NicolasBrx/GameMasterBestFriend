@@ -6,11 +6,32 @@
 package characters.person.fengshui;
 
 import characters.CharacterCreator;
+import characters.PlayerCharacter;
 
 /**
  *
  * @author nibrax
  */
 public class FengShuiCreator implements CharacterCreator {
-    
+  
+  private FengShuiPlayerCharacter character;
+  
+  public FengShuiCreator(){
+    this.character = null;
+  }
+  
+  @Override
+  public String ValidateCharacter(){
+    return null;
+  }
+  
+  @Override
+  public void createCharacter(){
+    character = new FengShuiPlayerCharacter();
+  }
+  
+  @Override
+  public PlayerCharacter getCharacter(){
+    return this.character;
+  }  
 }

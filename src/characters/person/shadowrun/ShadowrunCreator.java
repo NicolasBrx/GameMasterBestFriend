@@ -6,6 +6,7 @@
 package characters.person.shadowrun;
 
 import characters.CharacterCreator;
+import characters.PlayerCharacter;
 
 /**
  *
@@ -13,4 +14,25 @@ import characters.CharacterCreator;
  */
 public class ShadowrunCreator implements CharacterCreator {
     
+  
+  private ShadowrunPlayerCharacter character;
+  
+  public ShadowrunCreator(){
+    this.character = null;
+  }
+  
+  @Override
+  public String ValidateCharacter(){
+    return null;
+  }
+  
+  @Override
+  public void createCharacter(){
+    character = new ShadowrunPlayerCharacter();
+  }
+  
+  @Override
+  public PlayerCharacter getCharacter(){
+    return this.character;
+  }
 }

@@ -12,5 +12,15 @@ import characters.PlayerCharacter;
  * @author nibrax
  */
 public class CthulhuPlayerCharacter extends PlayerCharacter {
+  
+  @Override
+  public void saveCharacter(){
+    // TODO
+  }
+  
+  @Override
+  public void loadCharacter(String playerName){
+    // TODO
+  }
     
 }

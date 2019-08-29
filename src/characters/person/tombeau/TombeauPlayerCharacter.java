@@ -16,7 +16,7 @@ public class TombeauPlayerCharacter extends PlayerCharacter {
   
   public TombeauPlayerCharacter(){
     super();
-    attributeList.put("courrir", new CharacterAttribute("courrir",1,1,6));
+    attributeList.put("courir", new CharacterAttribute("courir",1,1,6));
     attributeList.put("encaisser", new CharacterAttribute("encaisser",1,1,6));
     attributeList.put("escalader", new CharacterAttribute("escalader",1,1,6));
     attributeList.put("forcer", new CharacterAttribute("forcer",1,1,6));
@@ -35,11 +35,11 @@ public class TombeauPlayerCharacter extends PlayerCharacter {
   }
   
   public int getRun(){
-    return attributeList.get("courrir").getCurrentValue();
+    return attributeList.get("courir").getCurrentValue();
   }
   
   public void setRun(int run) throws RPG_CharacterManagementException {
-    attributeList.get("courrir").setCurrentValue(run);
+    attributeList.get("courir").setCurrentValue(run);
   }
    
   public int getTakeUp(){
@@ -156,12 +156,12 @@ public class TombeauPlayerCharacter extends PlayerCharacter {
   }
   
   @Override
-  public void saveCharacter(){
+  public void loadCharacter(String playerName){
     // TODO
   }
   
   @Override
-  public void loadCharacter(String playerName){
+  public void saveCharacter(){
     // TODO
   }
   

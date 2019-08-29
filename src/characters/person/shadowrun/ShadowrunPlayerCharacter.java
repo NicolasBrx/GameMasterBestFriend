@@ -54,23 +54,34 @@ public class ShadowrunPlayerCharacter extends PlayerCharacter {
   
   /**
    * 
+   * @throws exceptions.RPG_CharacterManagementException
    */
-  public void computeDerivatedAttribute() throws RPG_CharacterManagementException {
-    this.initiatives.put("initiative", (getIntuition() + getReaction() + ThreadLocalRandom.current().nextInt(1, 7)));
-    this.initiatives.put("matrix initiative", (getIntuition() + getReaction() + ThreadLocalRandom.current().nextInt(1, 7)));
+  public void computeDerivatedAttribute() 
+                                       throws RPG_CharacterManagementException {
+    this.initiatives.put("initiative", (getIntuition() + getReaction() 
+                                  + ThreadLocalRandom.current().nextInt(1, 7)));
+    this.initiatives.put("matrix initiative", (getIntuition() + getReaction() 
+                                  + ThreadLocalRandom.current().nextInt(1, 7)));
     if(this.specialskill == SpecialSkills.magician){
-      initiatives.put("astral initiative", (getIntuition() * 2 + ThreadLocalRandom.current().nextInt(1, 7) + ThreadLocalRandom.current().nextInt(1, 7)));
+      initiatives.put("astral initiative", (getIntuition() * 2 
+                                  + ThreadLocalRandom.current().nextInt(1, 7) 
+                                  + ThreadLocalRandom.current().nextInt(1, 7)));
     }
     
-    this.limits.put("mental", Math.floorDiv((getLogic() * 2 + getBody() + getWillpower()),3));
-    this.limits.put("physical", Math.floorDiv((getStrength() * 2 + getBody() + getReaction()),3));
-    this.limits.put("social", Math.floorDiv((getCharisma() * 2 + getWillpower() + (int)Math.ceil(this.essence)),3));
+    this.limits.put("mental", Math.floorDiv((getLogic() * 2 + getBody() 
+                                                          + getWillpower()),3));
+    this.limits.put("physical", Math.floorDiv((getStrength() * 2 + getBody() 
+                                                           + getReaction()),3));
+    this.limits.put("social", Math.floorDiv((getCharisma() * 2 + getWillpower() 
+                                            + (int)Math.ceil(this.essence)),3));
     
     this.conditions.put("physical", 8 + Math.floorDiv(getBody(), 2));
     this.conditions.put("stun", 8 + Math.floorDiv(getWillpower(), 2));
     this.conditions.put("overflow", getBody());
+    this.conditions.put("armor",0); // TODO: for now, modified by gears and possibly by metatype
     
-    this.reputations.put("notoriety", this.reputations.get("public awareness") + this.reputations.get("street credit"));
+    this.reputations.put("notoriety", this.reputations.get("public awareness") 
+                                       + this.reputations.get("street credit"));
     
     
     this.otherSkills.put("composure", getCharisma() + getWillpower());
@@ -79,9 +90,11 @@ public class ShadowrunPlayerCharacter extends PlayerCharacter {
     this.otherSkills.put("memory",  getLogic() + getWillpower());
     this.otherSkills.put("movement", getAgility() * 2);
     
-    this.startingNuyens = (Integer.parseInt(lifestyle.getStartingNuyens(this.lifestyle).split("D")[0]) 
-                        * ThreadLocalRandom.current().nextInt(1, 7))
-                        + Integer.parseInt(lifestyle.getStartingNuyens(this.lifestyle).split("\\+")[1]);
+    this.startingNuyens = (Integer.parseInt(
+                   lifestyle.getStartingNuyens(this.lifestyle).split("D")[0]) 
+                * ThreadLocalRandom.current().nextInt(1, 7))
+                + Integer.parseInt(
+                   lifestyle.getStartingNuyens(this.lifestyle).split("\\+")[1]);
     
     // TODO: compute new attribute values (according to gear and other bonuses/maluses)... when we have the intel
   }
@@ -217,7 +230,8 @@ public class ShadowrunPlayerCharacter extends PlayerCharacter {
    */
   public boolean addAugmentation(GearAugmentation augmentation, boolean remove){
     boolean toReturn = true;
-    if(!godMode && (essence - augmentation.getAugmentationEssenceCost() < 0) && !remove){
+    if(!godMode && (essence - augmentation.getAugmentationEssenceCost() < 0) 
+    && !remove){
       toReturn = false;
     }
     else{
@@ -228,7 +242,8 @@ public class ShadowrunPlayerCharacter extends PlayerCharacter {
       else{
         toReturn = false;
         for(int i = 0 ; i < augmentationList.size() ; ++i){
-          if(augmentationList.get(i).getGearName().equals(augmentation.getGearName())){
+          if(augmentationList.get(i).getGearName().equals(
+                                                   augmentation.getGearName())){
             this.essence += augmentation.getAugmentationEssenceCost();
             this.augmentationList.remove(i);
             toReturn = true;
@@ -248,7 +263,8 @@ public class ShadowrunPlayerCharacter extends PlayerCharacter {
   public boolean addContact(Contact contact, boolean add){
     boolean toReturn;
     if(add){
-      int karmaCost = contact.getContactConnection() + contact.getContactLoyalty();
+      int karmaCost = contact.getContactConnection() 
+                    + contact.getContactLoyalty();
       toReturn = checkKarma(karmaCost * -1);
       if(toReturn){
         this.karma -= karmaCost;
@@ -258,8 +274,10 @@ public class ShadowrunPlayerCharacter extends PlayerCharacter {
     else{
       toReturn = false;
       for(int i = 0 ; i < contactList.size() ; ++i){
-        if(contactList.get(i).getContactName().equals(contact.getContactName())){
-          int karmaCost = contactList.get(i).getContactConnection() + contactList.get(i).getContactLoyalty();
+        if(contactList.get(i).getContactName().equals(contact.getContactName()))
+        {
+          int karmaCost = contactList.get(i).getContactConnection() 
+                                       + contactList.get(i).getContactLoyalty();
           toReturn = checkKarma(karmaCost);
           if(toReturn){
             this.contactList.remove(i);
@@ -349,10 +367,11 @@ public class ShadowrunPlayerCharacter extends PlayerCharacter {
     boolean toReturn = false;
     boolean found = false;
     for(String s : this.skillList.keySet()){
-      if(this.skillList.get(s).equals(skill.getSkillName())){
+      if(this.skillList.get(s).getSkillName().equals(skill.getSkillName())){
         found = true;
         if(this.skillList.get(s).getSkillRating() != (add ? 6 : 0)){
-          this.skillList.get(s).setSkillRating(this.skillList.get(s).getSkillRating() + (add ? 1 : -1));
+          this.skillList.get(s).setSkillRating(
+                       this.skillList.get(s).getSkillRating() + (add ? 1 : -1));
           toReturn = true;
         }
       }
@@ -448,7 +467,8 @@ public class ShadowrunPlayerCharacter extends PlayerCharacter {
     return this.attributeList.get("reaction").getCurrentValue();
   }
 
-  public void setReaction(int reaction) throws RPG_CharacterManagementException {
+  public void setReaction(int reaction) 
+                                       throws RPG_CharacterManagementException {
     this.attributeList.get("reaction").setCurrentValue(reaction);
   }
 
@@ -456,7 +476,8 @@ public class ShadowrunPlayerCharacter extends PlayerCharacter {
     return this.attributeList.get("strength").getCurrentValue();
   }
 
-  public void setStrength(int strength) throws RPG_CharacterManagementException {
+  public void setStrength(int strength) 
+                                       throws RPG_CharacterManagementException {
     this.attributeList.get("strength").setCurrentValue(strength);
   }
 
@@ -464,7 +485,8 @@ public class ShadowrunPlayerCharacter extends PlayerCharacter {
     return this.attributeList.get("willpower").getCurrentValue();
   }
 
-  public void setWillpower(int willpower) throws RPG_CharacterManagementException {
+  public void setWillpower(int willpower) 
+                                       throws RPG_CharacterManagementException {
     this.attributeList.get("willpower").setCurrentValue(willpower);
   }
 
@@ -480,7 +502,8 @@ public class ShadowrunPlayerCharacter extends PlayerCharacter {
     return this.attributeList.get("intuition").getCurrentValue();
   }
 
-  public void setIntuition(int intuition) throws RPG_CharacterManagementException {
+  public void setIntuition(int intuition) 
+                                       throws RPG_CharacterManagementException {
     this.attributeList.get("intuition").setCurrentValue(intuition);
   }
 
@@ -488,7 +511,8 @@ public class ShadowrunPlayerCharacter extends PlayerCharacter {
     return this.attributeList.get("charisma").getCurrentValue();
   }
 
-  public void setCharisma(int charisma) throws RPG_CharacterManagementException {
+  public void setCharisma(int charisma) 
+                                       throws RPG_CharacterManagementException {
     this.attributeList.get("charisma").setCurrentValue(charisma);
   }
 
@@ -512,7 +536,8 @@ public class ShadowrunPlayerCharacter extends PlayerCharacter {
     return this.attributeList.get("resonance").getCurrentValue();
   }
   
-  public void setResonance(int resonance) throws RPG_CharacterManagementException {
+  public void setResonance(int resonance) 
+                                       throws RPG_CharacterManagementException {
     this.attributeList.get("resonance").setCurrentValue(resonance);
   }
 
@@ -680,7 +705,8 @@ public class ShadowrunPlayerCharacter extends PlayerCharacter {
     return augmentationList;
   }
 
-  public void setAugmentationList(ArrayList<GearAugmentation> augmentationList) {
+  public void setAugmentationList(
+                                 ArrayList<GearAugmentation> augmentationList) {
     this.augmentationList = augmentationList;
   }
 

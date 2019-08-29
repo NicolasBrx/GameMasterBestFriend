@@ -45,7 +45,9 @@ public abstract class Gear {
    * for specific loading of all the components from an xml file (or something)
    * close to it.
    */
-  public abstract void loadGearListing();
+  public void loadGearListing(){
+    
+  }
 
   /****************************************************************************/    
   /*****                    Getter and Setter Methods                     *****/
